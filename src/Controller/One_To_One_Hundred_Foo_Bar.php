@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
+
 class One_To_One_Hundred_Foo_Bar {
 
 	/**
@@ -9,9 +11,10 @@ class One_To_One_Hundred_Foo_Bar {
 	 *
 	 * Example output: 1 2 Foo 4 Bar Foo 7 8 Foo Bar 11 Foo 13 14 FooBar …
 	 */
-	public function render() : string {
+	public function render() {
 
-		for ( $i = 0; $i < 100; $i++ ) {
+		$results = [];
+		for ( $i = 1; $i <= 100; $i++ ) {
 
 			$result = '';
 			if ( ! empty( $this->is_divisible_by_3( $i ) ) ) {
@@ -26,8 +29,12 @@ class One_To_One_Hundred_Foo_Bar {
 				$result = $i;
 			}
 
-			echo $result;
+			$results[] = $result;
 		}
+
+		return new Response(
+			sprintf( '<pre>%s</pre>', implode( ', ', $results ) )
+		);
 	}
 
 	protected function is_divisible_by_3( int $number ) {
