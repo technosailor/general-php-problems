@@ -10,6 +10,10 @@ even_numbers :
   path: /even_numbers/{number}
   controller: App\Controller\Even_Numbers_In_Range::render
 
+possible_values :
+  path: /possible_values
+  controller: App\Controller\Possible_Values::render
+
 array_duplicates :
   path: /array/unique
   controller: App\Controller\Remove_Array_Duplicates::render
