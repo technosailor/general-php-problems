@@ -14,6 +14,12 @@ class Remove_Array_Duplicates {
 		'two',
 	];
 
+	/**
+	 * Given: words = ['one', 'one', 'two', 'three', 'three', 'two']
+	 * Remove the duplicates.
+	 *
+	 * @return Response
+	 */
 	public function render() {
 		return new Response( var_dump( array_unique( $this->array ) ) );
 	}
