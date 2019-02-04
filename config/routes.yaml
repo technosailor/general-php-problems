@@ -9,3 +9,7 @@ one_to_one_hundred_foo_bar :
 even_numbers :
   path: /even_numbers/{number}
   controller: App\Controller\Even_Numbers_In_Range::render
+
+array_duplicates :
+  path: /array/unique
+  controller: App\Controller\Remove_Array_Duplicates::render
