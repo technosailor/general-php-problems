@@ -5,3 +5,7 @@
 one_to_one_hundred_foo_bar :
   path: /1_to_100_foo_bar
   controller: App\Controller\One_To_One_Hundred_Foo_Bar::render
+
+even_numbers :
+  path: /even_numbers/{number}
+  controller: App\Controller\Even_Numbers_In_Range::render
